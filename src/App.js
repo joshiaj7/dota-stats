@@ -12,16 +12,16 @@ export class App extends Component {
     }
   }
 
-  render () {
-    return (
-      <div className="App">
-        <Header></Header>
-        <Container>
-          <DotaTeams></DotaTeams>
-        </Container>
-      </div>
-    );
-  }
+render () {
+return (
+<div className="App">
+<Header></Header>
+<Container>
+<DotaTeams></DotaTeams>
+</Container>
+</div>
+);
+}
 }
 
 export default App;
