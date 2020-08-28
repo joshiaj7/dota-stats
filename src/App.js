@@ -4,9 +4,6 @@ import { Container } from "@material-ui/core";
 import Header from "./components/Header/Header"
 import DotaTeams from "./components/DotaTeams/DotaTeams"
 
-let x;
-console.log("test"      );
-
 export class App extends Component {
   constructor(props) {
     super(props);
