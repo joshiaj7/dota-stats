@@ -10,16 +10,24 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 345,
     },
+    cardmedia: {
+        marginTop: 10,
+        marginBottom: 10,
+    },
     img: {
         height: 100,
     },
     card: {
         background: "#073642",
         maxWidth: 300,
+        minHeight: 300,
+    },
+    title: {
+        color: "#fdf6e3",
     },
     typo: {
-        color: "#fff"
-    }
+        color: "#eee8d5",
+    },
   });
 
 
@@ -45,7 +53,7 @@ export default function DotaTeams() {
                 <Grid item sm={3} key={team.team_id}>
                     <Card
                     className={classes.card}>
-                        <div>
+                        <div className={classes.cardmedia}>
                             <img 
                             src={team.logo_url} 
                             className={classes.img}
@@ -53,20 +61,19 @@ export default function DotaTeams() {
                             ></img>
                         </div>
                         <CardContent className={classes.typo} align="left">
-                            <Typography gutterBottom variant="body1">
-                                Name : {team.name}
+                            <Typography gutterBottom variant="h6" className={classes.title}>
+                                {team.name}
                             </Typography>
-                            <Typography gutterBottom variant="body1">
+                            <Typography gutterBottom variant="body1" display="block">
                                 Rating : {team.rating}
                             </Typography>
-                            <Typography gutterBottom variant="body1">
+                            <Typography gutterBottom variant="body1" display="block">
                                 Wins : {team.wins}
                             </Typography>
-                            <Typography gutterBottom variant="body1">
+                            <Typography gutterBottom variant="body1" display="block">
                             Losses : {team.losses}
                             </Typography>
                         </CardContent>
-                        
                     </Card>
                 </Grid>
             ))}
