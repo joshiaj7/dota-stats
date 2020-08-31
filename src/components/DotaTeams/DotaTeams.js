@@ -34,14 +34,14 @@ export default function DotaTeams() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.opendota.com/api/teams')
-      .then((response) => response.json())
-      .then((result) => {
-        const res = result.slice(0, 30);
-        console.log(res);
-        setData(res);
-      });
+    getTeams();
   }, []);
+
+  const getTeams = async () => {
+    const data = await fetch('https://api.opendota.com/api/teams');
+    const teams = await data.json();
+    setData(teams.slice(0, 30));
+  };
 
   return (
     <Grid container spacing={3}>
