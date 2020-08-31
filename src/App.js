@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Container } from '@material-ui/core';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Header from './components/Header/Header';
-import DotaTeams from './components/DotaTeams/DotaTeams';
 import Sidebar from './components/Sidebar/Sidebar';
+import Content from './components/Content/Content';
 
 export class App extends Component {
   constructor(props) {
@@ -16,19 +16,19 @@ export class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header></Header>
-        <Grid container spacing={0}>
-          <Grid item md={2}>
-            <Sidebar></Sidebar>
+      <Router>
+        <div className="App">
+          <Header></Header>
+          <Grid container spacing={0}>
+            <Grid item sm={2}>
+              <Sidebar></Sidebar>
+            </Grid>
+            <Grid item sm={10}>
+              <Content></Content>
+            </Grid>
           </Grid>
-          <Grid item md={10}>
-            <Container>
-              <DotaTeams></DotaTeams>
-            </Container>
-          </Grid>
-        </Grid>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
