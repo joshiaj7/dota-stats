@@ -40,7 +40,7 @@ export default function DotaTeams() {
   const getTeams = async () => {
     const data = await fetch('https://api.opendota.com/api/teams');
     const teams = await data.json();
-    setData(teams.slice(0, 30));
+    setData(teams.slice(0, 32));
   };
 
   return (
