@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     background: '#073642',
     width: 240,
     minHeight: 1000,
-    position: 'fixed',
   },
   link: {
     width: '100%',
@@ -57,7 +56,7 @@ export default function Sidebar() {
     },
     {
       title: 'Players',
-      path: 'player',
+      path: 'players',
       icon: <PersonSharpIcon />,
     },
     {
