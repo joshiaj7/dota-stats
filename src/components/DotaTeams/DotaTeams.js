@@ -30,26 +30,23 @@ const useStyles = makeStyles({
   typo: {
     color: '#eee8d5',
   },
-  loading: {
-    minHeight: 1000,
-  },
 });
 
 export default function DotaTeams() {
   const classes = useStyles();
-  const [data, setData] = useState([]);
+  const [teams, setTeams] = useState([]);
 
   useEffect(() => {
     getTeams();
   }, []);
 
   const getTeams = async () => {
-    const data = await fetch('https://api.opendota.com/api/teams');
-    const teams = await data.json();
-    setData(teams.slice(0, 32));
+    const resp = await fetch('https://api.opendota.com/api/teams');
+    const resp_json = await resp.json();
+    setTeams(resp_json.slice(0, 32));
   };
 
-  const showData = data.map((team) => (
+  const showData = teams.map((team) => (
     <Grid item xs={6} md={3} key={team.team_id}>
       <Card className={classes.card}>
         <div className={classes.cardmedia}>
@@ -85,7 +82,7 @@ export default function DotaTeams() {
 
   return (
     <Grid container spacing={3} alignItems="center" justify="center">
-      {data.length > 0 ? showData : showLoading}
+      {teams.length > 0 ? showData : showLoading}
     </Grid>
   );
 }
