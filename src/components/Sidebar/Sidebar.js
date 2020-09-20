@@ -40,7 +40,6 @@ export default function Sidebar() {
 
   const choosePage = (page) => {
     setActive(page);
-    console.log(active);
   };
 
   const pages = [

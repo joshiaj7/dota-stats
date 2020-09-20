@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles({
   root: {
-    background: '#073642',
+    background: '#002b36',
     width: '100%',
     color: '#ffffff',
     minHeight: 800,
@@ -19,13 +19,16 @@ const useStyles = makeStyles({
   icon: {
     margin: 10,
   },
+  text: {
+    letterSpacing: '2px',
+  },
 });
 
 export default function LoadingPage() {
   const classes = useStyles();
 
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.root} elevation={0}>
       <Grid
         container
         className={classes.container}
@@ -34,7 +37,9 @@ export default function LoadingPage() {
       >
         <Grid item>
           <CircularProgress className={classes.icon} />
-          <Typography variant="h5"> Fetching Data </Typography>
+          <Typography variant="h5" className={classes.text}>
+            Fetching Data
+          </Typography>
         </Grid>
       </Grid>
     </Paper>

@@ -20,10 +20,10 @@ export class App extends Component {
         <div className="App">
           <Header></Header>
           <Grid container spacing={0}>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
               <Sidebar></Sidebar>
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={10}>
               <Content></Content>
             </Grid>
           </Grid>
