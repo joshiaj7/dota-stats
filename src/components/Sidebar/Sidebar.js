@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeSharpIcon from '@material-ui/icons/HomeSharp';
+import Paper from '@material-ui/core/Paper';
 import PeopleSharpIcon from '@material-ui/icons/PeopleSharp';
 import PersonSharpIcon from '@material-ui/icons/PersonSharp';
 import SportsEsportsSharpIcon from '@material-ui/icons/SportsEsportsSharp';
@@ -14,7 +15,6 @@ const useStyles = makeStyles({
   root: {
     background: '#073642',
     width: 240,
-    minHeight: 1000,
   },
   link: {
     width: '100%',
@@ -40,7 +40,6 @@ export default function Sidebar() {
 
   const choosePage = (page) => {
     setActive(page);
-    console.log(active);
   };
 
   const pages = [
@@ -67,23 +66,25 @@ export default function Sidebar() {
   ];
 
   return (
-    <List className={classes.root}>
-      {pages.map((page) => (
-        <Link to={'/' + page.path} className={classes.link} key={page.title}>
-          <ListItem
-            button
-            onClick={() => choosePage(page.path)}
-            className={
-              active === page.path ? classes.listActive : classes.listInactive
-            }
-          >
-            <ListItemIcon className={classes.listIcon}>
-              {page.icon}
-            </ListItemIcon>
-            <ListItemText>{page.title}</ListItemText>
-          </ListItem>
-        </Link>
-      ))}
-    </List>
+    <Paper className={classes.root}>
+      <List>
+        {pages.map((page) => (
+          <Link to={'/' + page.path} className={classes.link} key={page.title}>
+            <ListItem
+              button
+              onClick={() => choosePage(page.path)}
+              className={
+                active === page.path ? classes.listActive : classes.listInactive
+              }
+            >
+              <ListItemIcon className={classes.listIcon}>
+                {page.icon}
+              </ListItemIcon>
+              <ListItemText>{page.title}</ListItemText>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+    </Paper>
   );
 }

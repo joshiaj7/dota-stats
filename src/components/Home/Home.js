@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 const homeStyles = makeStyles({
   root: {
     width: '100%',
-    minHeight: 1000,
-    background: '#073642',
     color: '#ffffff',
   },
 });
