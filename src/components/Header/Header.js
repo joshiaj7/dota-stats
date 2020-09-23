@@ -1,15 +1,24 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography, Grid } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    background: '#073642',
+    background: theme.palette.background.component,
     marginBottom: 15,
   },
-});
+  typo: {
+    color: theme.palette.text.primary,
+  },
+}));
 
-export default function Header() {
+export default function Header({ changeTheme, darkTheme }) {
   const classes = useStyles();
 
   return (
@@ -17,7 +26,14 @@ export default function Header() {
       <Toolbar>
         <Grid container justify="center">
           <Grid item>
-            <Typography variant="h4">Dota Stats</Typography>
+            <Typography variant="h4" className={classes.typo}>
+              Dota Stats
+            </Typography>
+          </Grid>
+          <Grid item>
+            <IconButton onClick={changeTheme}>
+              {darkTheme ? <Brightness4Icon /> : <Brightness7Icon />}
+            </IconButton>
           </Grid>
         </Grid>
       </Toolbar>

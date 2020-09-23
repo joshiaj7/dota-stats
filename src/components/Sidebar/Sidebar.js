@@ -11,9 +11,9 @@ import PeopleSharpIcon from '@material-ui/icons/PeopleSharp';
 import PersonSharpIcon from '@material-ui/icons/PersonSharp';
 import SportsEsportsSharpIcon from '@material-ui/icons/SportsEsportsSharp';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    background: '#073642',
+    background: theme.palette.background.component,
     width: 240,
   },
   link: {
@@ -25,13 +25,16 @@ const useStyles = makeStyles({
     background: 'none',
   },
   listActive: {
-    background: '#657b83',
+    background: theme.palette.background.activeText,
     textDecoration: 'none',
   },
   listIcon: {
-    color: '#fff',
+    color: theme.palette.primary.main,
   },
-});
+  typo: {
+    color: theme.palette.text.primary,
+  },
+}));
 
 export default function Sidebar() {
   const classes = useStyles();
@@ -80,7 +83,7 @@ export default function Sidebar() {
               <ListItemIcon className={classes.listIcon}>
                 {page.icon}
               </ListItemIcon>
-              <ListItemText>{page.title}</ListItemText>
+              <ListItemText className={classes.typo}>{page.title}</ListItemText>
             </ListItem>
           </Link>
         ))}
