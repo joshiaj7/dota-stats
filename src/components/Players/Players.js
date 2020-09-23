@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import LoadingPage from '../Global/LoadingPage';
 
@@ -24,7 +23,13 @@ export default function Players() {
     setPlayers(resp_json.slice(0, 30));
   };
 
+  const showPlayers = <div>Showing Players</div>;
+
   return (
+    // <form className={classes.root} noValidate autoComplete="off">
+    //   <TextField label="" defaultValue="" />
+    // </form>
+
     <div>
       <LoadingPage />
     </div>
