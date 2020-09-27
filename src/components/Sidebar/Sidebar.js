@@ -11,7 +11,7 @@ import PeopleSharpIcon from '@material-ui/icons/PeopleSharp';
 import PersonSharpIcon from '@material-ui/icons/PersonSharp';
 import SportsEsportsSharpIcon from '@material-ui/icons/SportsEsportsSharp';
 
-const useStyles = makeStyles((theme) => ({
+const sidebarStyles = makeStyles((theme) => ({
   root: {
     background: theme.palette.background.component,
     width: 240,
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Sidebar() {
-  const classes = useStyles();
+  const classes = sidebarStyles();
   const location = useLocation();
   const [active, setActive] = useState(location.pathname.slice(1));
 

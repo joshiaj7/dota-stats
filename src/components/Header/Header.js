@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({ changeTheme, darkTheme }) {
+export default function Header({ changeTheme, darkMode }) {
   const classes = useStyles();
 
   return (
@@ -32,7 +32,7 @@ export default function Header({ changeTheme, darkTheme }) {
           </Grid>
           <Grid item>
             <IconButton onClick={changeTheme}>
-              {darkTheme ? <Brightness4Icon /> : <Brightness7Icon />}
+              {darkMode ? <Brightness4Icon /> : <Brightness7Icon />}
             </IconButton>
           </Grid>
         </Grid>
