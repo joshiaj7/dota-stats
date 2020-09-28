@@ -5,11 +5,11 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const useStyles = makeStyles({
+const loadingStyles = makeStyles((theme) => ({
   root: {
-    background: '#002b36',
+    background: theme.palette.background.main,
     width: '100%',
-    color: '#ffffff',
+    color: theme.palette.text.primary,
     minHeight: 800,
   },
   container: {
@@ -22,10 +22,10 @@ const useStyles = makeStyles({
   text: {
     letterSpacing: '2px',
   },
-});
+}));
 
 export default function LoadingPage() {
-  const classes = useStyles();
+  const classes = loadingStyles();
 
   return (
     <Paper className={classes.root} elevation={0}>

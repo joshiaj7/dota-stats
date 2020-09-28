@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import LoadingPage from '../Global/LoadingPage';
+import LoadingPage from '../assets/LoadingPage';
 
 const playersStyles = makeStyles({
   root: {

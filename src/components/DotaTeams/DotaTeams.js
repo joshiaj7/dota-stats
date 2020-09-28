@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LoadingPage from '../Global/LoadingPage';
+import LoadingPage from '../assets/LoadingPage';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -60,14 +60,14 @@ export default function DotaTeams() {
           <Card className={classes.card}>
             <div className={classes.cardmedia}>
               <img
-                src={team.logo_url}
+                src={team.logo_url ? team.logo_url : '/images/placeholder.png'}
                 className={classes.img}
                 alt={team.tag ? team.tag : 'team'}
               ></img>
             </div>
             <CardContent className={classes.typo} align="left">
               <Typography gutterBottom variant="h6" className={classes.title}>
-                {team.name}
+                {team.name ? team.name : 'NO_NAME'}
               </Typography>
               <Typography
                 gutterBottom

@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
   typo: {
     color: theme.palette.text.primary,
   },
+  icon: {
+    color: theme.palette.primary.main,
+  },
 }));
 
 export default function Header({ changeTheme, darkMode }) {
@@ -31,7 +34,7 @@ export default function Header({ changeTheme, darkMode }) {
             </Typography>
           </Grid>
           <Grid item>
-            <IconButton onClick={changeTheme}>
+            <IconButton onClick={changeTheme} className={classes.icon}>
               {darkMode ? <Brightness4Icon /> : <Brightness7Icon />}
             </IconButton>
           </Grid>

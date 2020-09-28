@@ -3,14 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import SearchIcon from '@material-ui/icons/Search';
 
 const matchStyles = makeStyles({
   root: {
     width: '100%',
     minHeight: 800,
-    // color: '#fff',
   },
   textfield: {
     width: '100%',
@@ -20,8 +18,8 @@ const matchStyles = makeStyles({
 
 export default function Matches() {
   const classes = matchStyles();
-  const [matchId, setMatchId] = useState([]);
-  const [match, setMatch] = useState([]);
+  const [matchId, setMatchId] = useState();
+  // const [match, setMatch] = useState([]);
 
   // useEffect(() => {
   //   getMatch();
@@ -33,23 +31,35 @@ export default function Matches() {
   //   setMatch(resp_json.slice(0, 30));
   // };
 
+  const handleChange = (e) => {
+    setMatchId(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(matchId);
+  };
+
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form className={classes.root} onSubmit={handleSubmit}>
       <Grid container>
         <Grid item md={9}>
           <TextField
             label="Input Match ID"
-            defaultValue=""
+            value={matchId}
             className={classes.textfield}
+            onChange={handleChange}
           />
         </Grid>
         <Grid item md={3}>
-          <Button>
+          <Button type="submit">
             <SearchIcon />
           </Button>
         </Grid>
+        <Grid item md={12}>
+          This is the content
+        </Grid>
       </Grid>
-      <Paper>ASDASD</Paper>
     </form>
   );
 }
