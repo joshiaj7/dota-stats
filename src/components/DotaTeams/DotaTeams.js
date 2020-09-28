@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LoadingPage from '../Global/LoadingPage';
+import LoadingPage from '../assets/LoadingPage';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
